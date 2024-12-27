@@ -1,24 +1,26 @@
-# Default values for go-web-app-chart.
+# Default Values for go-web-chart.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: abhishekf5/go-web-app
+  repository: ramkumar222/go-web-app
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "10016307834"
+  # Overrides the image tag. Default is the chart appVersion.
+  tag: "v1"
 
 ingress:
   enabled: false
   className: ""
   annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  
+  # Kubernetes Ingress class and annotations (if needed):
+  # kubernetes.io/ingress.class: nginx
+  # kubernetes.io/tls-acme: "true"
+  
   hosts:
     - host: chart-example.local
       paths:
         - path: /
           pathType: ImplementationSpecific
-
